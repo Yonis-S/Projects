@@ -1,12 +1,4 @@
-// Lissandro Velazquez
-// CPSC 120-08
 // 2022-10-20
-// LissandroV@csu.fullerton.edu
-// @LVcode120
-//
-// Lab 07-02
-// Partners: @Yonis-S
-//
 // Program of Blackjack game
 //
 
