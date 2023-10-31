@@ -99,52 +99,7 @@ template<typename T> class Inventory{
             }
     }
 };
-template<typename T>class Appointment{
-    public: 
-        T c_name;
-        T ap_date;
-        T ap_time;
-        T CWID;
-        Appointment(T n, T d, T t, T cw){
-            c_name = n;
-            ap_date = d;
-            ap_time = t;
-            CWID = cw; 
-        }
-};
-template<typename T>class AppointmentSystem{
-        public:
-        std::vector<Appointment<T>> ap;
-        void schedule(const Appointment<T>& apt){
-            for (int i = 0; i<ap.size(); i++){
-                 if (ap[i].CWID == apt.CWID) {
-                    std::cout << "You have already scheduled an appointment!!!" << std::endl;
-                 }
-            }
-            ap.push_back(apt);
-        }
-        void Total_appointments(const T& date, const T& time) {
-            int f = 0;
-            for (int i = 0; i<ap.size(); i++){
-                if (ap[i].ap_date == date && ap[i].ap_time == time) {
-                 std::cout<< "Total Appointments: " << i<<  " appointment(s) at that day and time." << std::endl;
-            f++;
-            break;
-            }
-            
-            }
-        }
-        void removeRecent() {
-            ap.pop_back();
-        }
-        void display(){
-            std::cout<<"-------Appointments-------"<<std::endl;
-            std::cout<<std::left<<std::setw(20)<<"Name"<<std::setw(15)<<"Date"<<std::setw(15)<<"Time"<<std::setw(15)<<"CWID"<<std::endl;
-            for(int i=0; i<ap.size();i++){
-                std::cout<<std::left << std::setw(20)<<ap[i].c_name<<std::setw(15)<<ap[i].ap_date<<std::setw(15)<<ap[i].ap_time<<std::setw(15)<<ap[i].CWID<<std::endl;
-            }
-        }
-};
+
 int main(){
     Inventory<std::string> i1;
     Item<std::string> I1("Protien Bar","05/09/2023","Snacks",4);
@@ -187,19 +142,4 @@ int main(){
     catch(const char* msg){
         std::cout<<msg<<std::endl;
     }
-    Appointment<std::string> a1("John Bob","09/12/2023","9:30AM","889456723");
-    Appointment<std::string> a2("Jim Lee","09/12/2023","10:30AM","883476923");
-    Appointment<std::string> a3("Chris Lynn","09/12/2023","12:00PM","879455714");
-    Appointment<std::string> a4("Arnav Shah","09/12/2023","12:00PM","879459583");
-    AppointmentSystem<std::string> s1;
-    s1.schedule(a1);
-    s1.schedule(a2);
-    s1.schedule(a3);
-    s1.schedule(a4);
-    s1.display();
-    s1.Total_appointments("09/12/2023","12:00PM");
-    Appointment<std::string> a5("Chris Lynn","09/12/2023","12:00PM","879455714");
-    s1.schedule(a4);
-    s1.removeRecent();
-    s1.display();
 }
