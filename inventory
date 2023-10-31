@@ -3,7 +3,7 @@
 #include<vector>
 #include <iomanip>
 template <typename T> class Item{
-    public:
+  public:
         T name;
         T expiration;
         T category;
