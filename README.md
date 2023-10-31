@@ -12,3 +12,5 @@ Utilizes doubly linked list to move back and forth through nodes that we have pr
 
 Library Program: 
 Program that provides a design of a digital library, allowing users to interact with a collection of books by adding, deleting, finding, and displaying them. The operations that are implemented throughout this digital library program includes conditional statements, loops, different return types, exception handling, find command, as well as thoughtful logic.
+
+Thank you for visiting my page of my projects! I will continue to produce more interesting programs in this file!!!
